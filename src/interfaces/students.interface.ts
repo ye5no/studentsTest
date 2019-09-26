@@ -1,5 +1,6 @@
 export interface StudentsInterface {
-  readonly name: string;
-  readonly surname: string;
-  readonly birth: string;
+  id?: number;
+  name: string;
+  surname: string;
+  birth: string;
 }

@@ -6,7 +6,7 @@ const customs = {
 };
 
 export function IsCustomRegex(property: string, validationOptions?: ValidationOptions) {
-  return (object: Object, propertyName: string) => {
+  return (object: any, propertyName: string) => {
     registerDecorator({
       name: 'isCustomRegex',
       target: object.constructor,

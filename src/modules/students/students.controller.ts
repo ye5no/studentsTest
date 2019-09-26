@@ -23,7 +23,7 @@ export class StudentsController {
 
   @Get('all')
   @ApiOperation({ title: 'Get all students' })
-  findAll(): Promise<StudentsEntity[]> {
+  findAll(): Promise<StudentsEntity []> {
     return this.studentsService.find();
   }
 
@@ -36,7 +36,7 @@ export class StudentsController {
   @Post('edit')
   @ApiOperation({ title: 'Edit student' })
   edit(@Body() editStudentDto: EditStudentDto): Promise<StudentsEntity> {
-    return this.studentsService.edit(editStudentDto.id, editStudentDto);
+    return this.studentsService.edit(editStudentDto);
   }
 
   @Post('delete')

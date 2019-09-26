@@ -12,7 +12,7 @@ const options = new DocumentBuilder()
   .addOAuth2()
   .build();
 
-async function bootstrap() {
+async function bootstrap(): Promise<void> {
   const app = await NestFactory.create(AppModule);
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('docs', app, document);
@@ -21,7 +21,9 @@ async function bootstrap() {
 
   const port = ConfigService.get('express').port;
   await app.listen(port);
-  console.log(`Nest start on ${port}`);
+  console.log(`Nest on ${port}`);
 }
 
-bootstrap();
+(async () => {
+  await bootstrap();
+})();
