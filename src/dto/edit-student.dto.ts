@@ -5,5 +5,5 @@ import { CreateStudentDto } from './create-student.dto';
 export class EditStudentDto extends CreateStudentDto {
   @ApiModelProperty({ required: true, example: 10 })
   @IsInt()
-  readonly id: number;
+  id: number;
 }

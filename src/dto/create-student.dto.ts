@@ -7,15 +7,15 @@ export class CreateStudentDto {
   @IsCustomRegex('engRusRegex', { message: 'Wrong name' })
   @MinLength(2, { message: 'Name is too short' })
   @MaxLength(30, { message: 'Name is too long' })
-  readonly name: string;
+  name: string;
 
   @ApiModelProperty({ required: true, example: 'Snow' })
   @IsCustomRegex('engRusRegex', { message: 'Wrong name' })
   @MinLength(2, { message: 'Surname is too short' })
   @MaxLength(30, { message: 'Surname is too long' })
-  readonly surname: string;
+  surname: string;
 
   @ApiModelProperty({ required: true, example: '15-01-2019' })
   @IsCustomRegex('dateRegex', { message: 'Date must be 15-01-2019' })
-  readonly birth: string;
+  birth: string;
 }
