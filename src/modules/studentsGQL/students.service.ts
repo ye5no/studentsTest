@@ -12,7 +12,8 @@ export class StudentsService {
     private readonly studentsRepository: Repository<StudentsEntity>,
   ) {}
 
-  find({ skip, take }): Promise<StudentsEntity[]> {
+  find(args: StudentsArgs): Promise<StudentsEntity[]> {
+    const { skip, take } = args;
     return this.studentsRepository
       .createQueryBuilder()
       .orderBy('id', 'ASC')

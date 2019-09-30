@@ -1,4 +1,3 @@
-import { NotFoundException } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver, Subscription } from '@nestjs/graphql';
 import { PubSub } from 'apollo-server-express';
 import { CreateStudentDto } from '../../dto/create-student.dto';
@@ -15,7 +14,6 @@ export class StudentsResolver {
 
   @Query(returns => [StudentsEntity])
   async students(@Args() studentsArgs: StudentsArgs): Promise<StudentsEntity[]> {
-    console.log('gql');
     return await this.studentsService.find(studentsArgs);
   }
 
@@ -34,7 +32,7 @@ export class StudentsResolver {
   }
 
   @Mutation(returns => StudentsEntity)
-  async deleteStudent(@Args('id') id: number) {
+  deleteStudent(@Args('id') id: number) {
     return this.studentsService.delete(id);
   }
 

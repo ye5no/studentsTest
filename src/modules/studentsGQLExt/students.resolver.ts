@@ -9,7 +9,6 @@ export class StudentsResolverExt {
 
   @Query(returns => StudentsEntity)
   async student(@Args('id') id: number): Promise<StudentsEntity> {
-    console.log('gql_ext');
     const student = await this.studentsService.findOneById(id);
     if (!student) throw new NotFoundException(id);
     return student;

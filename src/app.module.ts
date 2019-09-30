@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from 'nestjs-config';
 import { StudentsModule } from './modules/students/students.module';
-import { StudentsModuleGQL } from './modules/students_gql/students.module';
-import { StudentsModuleGQLExt } from './modules/students_gql_ext/students.module';
+import { StudentsModuleGQL } from './modules/studentsGQL/students.module';
+import { StudentsModuleGQLExt } from './modules/studentsGQLExt/students.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import * as path from 'path';
 
